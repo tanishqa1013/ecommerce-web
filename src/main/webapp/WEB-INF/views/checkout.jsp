@@ -9,11 +9,6 @@
 </head>
 <body>
     <div class="header">🛒 Mini E-Commerce Store</div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <div class="user-greeting-left">
-            👋 Hi, <strong>${sessionScope.loggedInUser.username}</strong>
-        </div>
-    </c:if>
 
     <div class="top-nav">
         <a href="products">🏠 Home</a>
@@ -85,7 +80,7 @@
                 <div class="summary-items">
                     <c:forEach var="item" items="${cart.items}">
                         <div class="summary-item">
-                            <img src="${item.product.imageUrl}" alt="${item.product.name}"/>
+                            <img src="${item.product.mainImage}" alt="${item.product.name}"/>
                             <div class="summary-item-info">
                                 <div class="summary-item-name">${item.product.name}</div>
                                 <div class="summary-item-qty">Qty: ${item.quantity}</div>
@@ -112,8 +107,5 @@
             </div>
         </div>
     </div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <a href="logout" class="floating-logout">🚪 Logout</a>
-    </c:if>
 </body>
 </html>

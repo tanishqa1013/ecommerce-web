@@ -9,11 +9,6 @@
 </head>
 <body>
     <div class="header">🛒 Mini E-Commerce Store</div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <div class="user-greeting-left">
-            👋 Hi, <strong>${sessionScope.loggedInUser.username}</strong>
-        </div>
-    </c:if>
 
     <div class="top-nav">
         <a href="products">🏠 Home</a>
@@ -47,14 +42,13 @@
         <div class="divider"></div>
 
         <div class="footer-link">
-            New here? <a href="register">Create an account ✨</a>
-        </div>
-        <div class="footer-link">
-            <a href="products">← Continue as guest</a>
+            <p style="font-size: 1em; color: #4a1a5c; margin-bottom: 10px;">
+                Don't have an account?
+            </p>
+            <a href="register" class="register-btn" style="display: inline-block; text-decoration: none; padding: 10px 30px; font-size: 0.95em;">
+                📝 Create New Account
+            </a>
         </div>
     </div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <a href="logout" class="floating-logout">🚪 Logout</a>
-    </c:if>
 </body>
 </html>

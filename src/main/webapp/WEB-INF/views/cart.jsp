@@ -9,18 +9,13 @@
 </head>
 <body>
     <div class="header">🛒 Mini E-Commerce Store</div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <div class="user-greeting-left">
-            👋 Hi, <strong>${sessionScope.loggedInUser.username}</strong>
-        </div>
-    </c:if>
 
     <div class="top-nav">
         <a href="products">🏠 Home</a>
         <a href="cart">🛍️ Cart</a>
         <a href="my-orders">📜 My Orders</a>
         <a href="login">👤 Login</a>
-       <a href="register">📝 Register</a>
+        <a href="register">📝 Register</a>
     </div>
 
     <div class="container">
@@ -40,7 +35,7 @@
                     <div class="cart-items">
                         <c:forEach var="item" items="${cart.items}">
                             <div class="cart-item">
-                                <img src="${item.product.imageUrl}" alt="${item.product.name}"/>
+                                <img src="${item.product.mainImage}" alt="${item.product.name}"/>
                                 <div class="item-info">
                                     <h3>${item.product.name}</h3>
                                     <span class="category">${item.product.category}</span>
@@ -55,7 +50,7 @@
                                             <button type="submit" class="btn-update">Update</button>
                                         </form>
                                         <a href="#" class="btn-remove" 
-   onclick="animateRemove(event, this, ${item.product.id}, '${item.product.imageUrl}')">🗑️ Remove</a>
+   onclick="animateRemove(event, this, ${item.product.id}, '${item.product.mainImage}')">🗑️ Remove</a>
                                     </div>
                                 </div>
                             </div>
@@ -69,11 +64,11 @@
                             <span>Total:</span>
                             <span class="total-value">Rs. ${cart.total}</span>
                         </div>
-                       <a href="checkout" class="checkout-btn">🎉 Proceed to Checkout</a>
+                        <a href="checkout" class="checkout-btn">🎉 Proceed to Checkout</a>
                     </div>
                 </div>
             </c:otherwise>
-    </c:choose>
+        </c:choose>
     </div>
 
     <!-- Floating trash bin (only shows during animation) -->
@@ -125,8 +120,5 @@
             }, 1200);
         }
     </script>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <a href="logout" class="floating-logout">🚪 Logout</a>
-    </c:if>
 </body>
 </html>

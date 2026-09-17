@@ -9,22 +9,17 @@
 </head>
 <body>
     <div class="header">🛒 Mini E-Commerce Store</div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <div class="user-greeting-left">
-            👋 Hi, <strong>${sessionScope.loggedInUser.username}</strong>
-        </div>
-    </c:if>
 
     <div class="top-nav">
         <a href="products">🏠 Home</a>
         <a href="cart">🛍️ Cart</a>
         <a href="my-orders">📜 My Orders</a>
         <a href="login">👤 Login</a>
-        <a href="register"> 📝 Register</a>
+        <a href="register">📝 Register</a>
     </div>
 
     <div class="form-container">
-        <h2>✨ Create Your Account</h2>
+        <h2>📝 Create Your Account</h2>
 
         <c:if test="${not empty error}">
             <div class="error">${error}</div>
@@ -56,14 +51,13 @@
         <div class="divider"></div>
 
         <div class="footer-link">
-            Already have an account? <a href="login">Sign in</a>
-        </div>
-        <div class="footer-link">
-            <a href="products">← Continue shopping without registering</a>
+            <p style="font-size: 1em; color: #4a1a5c; margin-bottom: 10px;">
+                Already have an account?
+            </p>
+            <a href="login" class="login-btn" style="display: inline-block; text-decoration: none; padding: 10px 30px; font-size: 0.95em;">
+                👤 Sign In Instead
+            </a>
         </div>
     </div>
-    <c:if test="${not empty sessionScope.loggedInUser}">
-        <a href="logout" class="floating-logout">🚪 Logout</a>
-    </c:if>
 </body>
 </html>
