@@ -1,0 +1,9 @@
+target/
+.git/
+.vscode/
+.idea/
+*.iml
+*.log
+aiven-credentials.txt
+aiven-ca.pem
+ecommerce_db_backup.sql
