@@ -7,34 +7,42 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+    background: #0a0a14;
+    background-image: 
+        radial-gradient(at 20% 20%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 80%, rgba(236, 72, 153, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(34, 211, 238, 0.08) 0px, transparent 60%);
     background-attachment: fixed;
     min-height: 100vh;
-    color: #333;
+    color: #e2e8f0;
 }
 
 /* ========== HEADER ========== */
 .header {
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    color: white;
+    background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+    color: #f1f5f9;
     padding: 18px 40px;
     font-size: 1.6em;
     font-weight: bold;
-    box-shadow: 0 4px 20px rgba(118, 75, 162, 0.3);
-    letter-spacing: 0.5px;
+    box-shadow: 0 4px 30px rgba(168, 85, 247, 0.3);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
 }
 
 /* ========== USER GREETING (top-left, under header) ========== */
 .user-greeting-left {
     padding: 12px 40px;
-    background: linear-gradient(90deg, #fef3f2 0%, #faf5ff 100%);
-    color: #4a1a5c;
+    background: rgba(26, 26, 46, 0.6);
+    color: #cbd5e1;
     font-size: 1em;
-    border-bottom: 1px solid rgba(240, 147, 251, 0.2);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .user-greeting-left strong {
-    color: #764ba2;
+    color: #22d3ee;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
 }
 
 /* ========== FLOATING LOGOUT (bottom-right) ========== */
@@ -42,42 +50,43 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
     color: white !important;
     padding: 12px 24px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95em;
-    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
     z-index: 998;
     transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .floating-logout:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
     color: white !important;
 }
 
 /* ========== NAV BAR ========== */
 .top-nav {
     padding: 15px 40px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(26, 26, 46, 0.8);
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 154, 158, 0.3);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .top-nav a {
-    color: #764ba2;
+    color: #a855f7;
     text-decoration: none;
     margin-right: 25px;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .top-nav a:hover {
-    color: #f093fb;
+    color: #22d3ee;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
 }
 
 /* ========== CONTAINER ========== */
@@ -88,17 +97,18 @@ body {
 }
 
 h1, h2, h3 {
-    color: #4a1a5c;
+    color: #f1f5f9;
 }
 
 h2 {
     font-size: 1.9em;
     margin-bottom: 25px;
-    background: linear-gradient(90deg, #667eea, #f093fb);
+    background: linear-gradient(90deg, #a855f7, #ec4899, #22d3ee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
 }
 
 /* ========== PRODUCT GRID ========== */
@@ -109,21 +119,22 @@ h2 {
 }
 
 .product-card {
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s;
     text-decoration: none;
     color: inherit;
     display: block;
-    border: 2px solid transparent;
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .product-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 16px 40px rgba(240, 147, 251, 0.4);
-    border-color: rgba(240, 147, 251, 0.5);
+    box-shadow: 0 16px 40px rgba(168, 85, 247, 0.5), 0 0 50px rgba(236, 72, 153, 0.3);
+    border-color: rgba(236, 72, 153, 0.6);
 }
 
 .product-image {
@@ -144,25 +155,27 @@ h2 {
 .product-name {
     font-size: 1.15em;
     font-weight: bold;
-    color: #4a1a5c;
+    color: #f1f5f9;
     margin-bottom: 8px;
 }
 
 .product-category {
     display: inline-block;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: rgba(168, 85, 247, 0.2);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8em;
-    color: #764ba2;
+    color: #c4b5fd;
     font-weight: 600;
     margin-bottom: 12px;
+    border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
 .product-price {
     font-size: 1.4em;
-    color: #4a1a5c;
+    color: #22d3ee;
     font-weight: bold;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
 }
 
 .product-stock {
@@ -170,10 +183,12 @@ h2 {
     font-size: 0.85em;
     margin-top: 6px;
     font-weight: 600;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
 }
 
 .product-stock.low {
-    color: #f5576c;
+    color: #ef4444;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
 }
 
 /* ========== PRODUCT DETAIL PAGE ========== */
@@ -181,9 +196,11 @@ h2 {
     max-width: 1100px;
     margin: 30px auto;
     padding: 40px;
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -196,7 +213,6 @@ h2 {
     align-items: center;
 }
 
-/* On phones (screen width less than 768px), stack vertically */
 @media (max-width: 768px) {
     .detail-top {
         grid-template-columns: 1fr;
@@ -212,14 +228,13 @@ h2 {
     width: 100%;
 }
 
-
 .detail-title {
     padding: 10px 0;
 }
 
 .detail-bottom {
     padding-top: 25px;
-    border-top: 2px solid #fce7f3;
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
     text-align: left;
 }
 
@@ -244,28 +259,29 @@ h2 {
     max-height: 450px;
     object-fit: cover;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .product-name-large {
     font-size: 2em;
-    color: #4a1a5c;
+    color: #f1f5f9;
     margin-bottom: 10px;
 }
 
 .product-category-large {
     display: inline-block;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: rgba(168, 85, 247, 0.2);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.9em;
-    color: #764ba2;
+    color: #c4b5fd;
     font-weight: 600;
     margin-bottom: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
 .product-desc-large {
-    color: #555;
+    color: #cbd5e1;
     font-size: 1.05em;
     line-height: 1.7;
     margin: 20px 0;
@@ -273,9 +289,10 @@ h2 {
 
 .product-price-large {
     font-size: 2.5em;
-    color: #4a1a5c;
+    color: #22d3ee;
     font-weight: bold;
     margin: 20px 0 10px;
+    text-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
 }
 
 .product-stock-large {
@@ -283,16 +300,17 @@ h2 {
     font-size: 1em;
     margin-bottom: 25px;
     font-weight: bold;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
 }
 
 .product-stock-large.low {
-    color: #f5576c;
+    color: #ef4444;
 }
 
 .back-link {
     display: inline-block;
     margin: 20px 40px;
-    color: #764ba2;
+    color: #a855f7;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95em;
@@ -300,7 +318,8 @@ h2 {
 }
 
 .back-link:hover {
-    color: #f093fb;
+    color: #22d3ee;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
 }
 
 /* ========== BUTTONS ========== */
@@ -318,24 +337,24 @@ h2 {
 }
 
 .cart-button, .register-btn, .login-btn, .continue-shopping, .checkout-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
 }
 
 .buy-button {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
     margin-right: 10px;
 }
 
 .cart-button:hover, .register-btn:hover, .login-btn:hover, .continue-shopping:hover, .checkout-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.5);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.8);
 }
 
 .buy-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+    box-shadow: 0 0 35px rgba(236, 72, 153, 0.8);
 }
 
 /* ========== FORMS (Login / Register) ========== */
@@ -343,9 +362,11 @@ h2 {
     max-width: 450px;
     margin: 50px auto;
     padding: 40px;
-    background: white;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(118, 75, 162, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .form-container h2 {
@@ -360,7 +381,7 @@ h2 {
 label {
     display: block;
     font-weight: 600;
-    color: #4a1a5c;
+    color: #cbd5e1;
     margin-bottom: 8px;
     font-size: 0.95em;
 }
@@ -368,16 +389,18 @@ label {
 input[type="text"], input[type="password"], input[type="email"] {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #f0e6f7;
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: 10px;
     font-size: 1em;
+    color: #f1f5f9;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     outline: none;
-    border-color: #f093fb;
-    box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+    border-color: #22d3ee;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
 }
 
 .register-btn, .login-btn {
@@ -387,43 +410,46 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .error {
-    background: linear-gradient(135deg, #ffe0e6 0%, #ffc9d1 100%);
-    color: #c41e3a;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
     padding: 12px 15px;
     border-radius: 10px;
     margin-bottom: 20px;
-    border-left: 4px solid #f5576c;
+    border-left: 4px solid #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .success {
-    background: linear-gradient(135deg, #d4f5e0 0%, #a8e6c1 100%);
-    color: #1a7a4a;
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
     padding: 12px 15px;
     border-radius: 10px;
     margin-bottom: 20px;
     border-left: 4px solid #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .footer-link {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
-    color: #666;
+    color: #94a3b8;
 }
 
 .footer-link a {
-    color: #764ba2;
+    color: #22d3ee;
     text-decoration: none;
     font-weight: 600;
 }
 
 .footer-link a:hover {
-    color: #f093fb;
+    color: #ec4899;
     text-decoration: underline;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
 }
 
 .divider {
-    border-top: 1px solid #f0e6f7;
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
     margin: 25px 0 15px;
 }
 
@@ -435,10 +461,12 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .cart-items {
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .cart-item {
@@ -447,7 +475,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     gap: 25px;
     align-items: start;
     padding: 20px 0;
-    border-bottom: 2px solid #fce7f3;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .cart-item:last-child {
@@ -459,35 +487,37 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     height: 120px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .item-info h3 {
     margin: 0 0 10px 0;
     font-size: 1.2em;
-    color: #4a1a5c;
+    color: #f1f5f9;
 }
 
 .item-info .category {
     display: inline-block;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: rgba(168, 85, 247, 0.2);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8em;
-    color: #764ba2;
+    color: #c4b5fd;
     font-weight: 600;
     margin-bottom: 10px;
+    border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
 .item-info .price {
-    color: #4a1a5c;
+    color: #22d3ee;
     font-weight: bold;
     font-size: 1.2em;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
 }
 
 .subtotal {
     font-size: 0.95em;
-    color: #666;
+    color: #94a3b8;
     margin-top: 5px;
 }
 
@@ -508,14 +538,16 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .qty-form input[type="number"] {
     width: 65px;
     padding: 8px;
-    border: 2px solid #f0e6f7;
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: 8px;
     text-align: center;
     font-size: 0.95em;
+    color: #f1f5f9;
 }
 
 .btn-update {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -523,15 +555,17 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     cursor: pointer;
     font-size: 0.85em;
     font-weight: 600;
-    transition: transform 0.2s;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
 }
 
 .btn-update:hover {
     transform: translateY(-1px);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
 }
 
 .btn-remove {
-    color: #f5576c;
+    color: #ec4899;
     cursor: pointer;
     font-size: 0.9em;
     text-decoration: none;
@@ -540,13 +574,16 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .btn-remove:hover {
     text-decoration: underline;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
 }
 
 .cart-summary {
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     max-width: 400px;
     margin-right: auto;
 }
@@ -562,12 +599,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     font-size: 1.3em;
     font-weight: bold;
     padding: 12px 0;
-    border-top: 2px solid #fce7f3;
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
     margin-top: 12px;
 }
 
 .total-row .total-value {
-    color: #4a1a5c;
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
 }
 
 .checkout-btn {
@@ -577,11 +615,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .empty-cart {
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     padding: 60px 40px;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     text-align: center;
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .empty-cart h3 {
@@ -599,14 +639,15 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     animation: fadeIn 0.5s ease-out;
 }
 
-/* ========== SCROLL GALLERY (Amazon style) ========== */
+/* ========== SCROLL GALLERY ========== */
 .scroll-gallery {
     position: relative;
     width: 100%;
-    background: white;
+    background: rgba(10, 10, 20, 0.5);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .scroll-track {
@@ -629,7 +670,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     height: 450px;
     object-fit: cover;
     scroll-snap-align: start;
-    background: #f8f4fc;
+    background: #0a0a14;
 }
 
 .scroll-dots {
@@ -640,29 +681,30 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     display: flex;
     gap: 10px;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(10, 10, 20, 0.7);
     padding: 6px 12px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .scroll-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(118, 75, 162, 0.3);
+    background: rgba(168, 85, 247, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .scroll-dot.active {
-    background: #f093fb;
+    background: #22d3ee;
     transform: scale(1.4);
-    box-shadow: 0 2px 8px rgba(240, 147, 251, 0.6);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
 }
 
 .scroll-dot:hover {
-    background: rgba(240, 147, 251, 0.7);
+    background: rgba(236, 72, 153, 0.7);
 }
 
 /* ========== SEARCH BOX ========== */
@@ -674,31 +716,35 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .search-input {
     padding: 8px 15px;
-    border: 2px solid #f0e6f7;
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: 20px 0 0 20px;
     font-size: 0.9em;
     width: 220px;
     outline: none;
+    color: #f1f5f9;
     transition: border-color 0.3s;
 }
 
 .search-input:focus {
-    border-color: #f093fb;
+    border-color: #22d3ee;
 }
 
 .search-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     color: white;
     border: none;
     padding: 9px 16px;
     border-radius: 0 20px 20px 0;
     cursor: pointer;
     font-size: 0.95em;
-    transition: transform 0.2s;
+    transition: all 0.2s;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
 }
 
 .search-btn:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
 }
 
 /* ========== TRASH BIN ANIMATION ========== */
@@ -708,13 +754,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     right: 30px;
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    box-shadow: 0 8px 24px rgba(245, 87, 108, 0.4);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
     opacity: 0;
     transform: scale(0);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -742,7 +788,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     z-index: 1000;
     border-radius: 12px;
     transition: all 0.8s cubic-bezier(0.5, -0.5, 0.5, 1.5);
-    box-shadow: 0 8px 24px rgba(240, 147, 251, 0.5);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
     object-fit: cover;
     pointer-events: none;
 }
@@ -762,17 +808,18 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .star {
-    color: #d1d5db;
+    color: #475569;
     font-size: 1.3em;
     line-height: 1;
 }
 
 .star.filled {
-    color: #ffc107;
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
 }
 
 .rating-text {
-    color: #666;
+    color: #94a3b8;
     font-size: 0.95em;
     font-weight: 600;
 }
@@ -781,9 +828,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     max-width: 1100px;
     margin: 30px auto;
     padding: 40px;
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     animation: fadeIn 0.5s ease-out;
 }
 
@@ -794,51 +843,54 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .reviews-section h3 {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: #4a1a5c;
+    color: #f1f5f9;
 }
 
 .review-login-prompt {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: rgba(168, 85, 247, 0.1);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
     margin-bottom: 25px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .review-login-prompt p {
-    color: #4a1a5c;
+    color: #cbd5e1;
     font-weight: 600;
 }
 
 .review-login-prompt a {
-    color: #764ba2;
+    color: #22d3ee;
     font-weight: bold;
     text-decoration: underline;
 }
 
 .review-form-container {
-    background: linear-gradient(135deg, #faf5ff 0%, #fef3f2 100%);
+    background: rgba(10, 10, 20, 0.5);
     padding: 25px;
     border-radius: 16px;
     margin-bottom: 30px;
-    border: 2px solid rgba(240, 147, 251, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .review-form textarea {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #f0e6f7;
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: 10px;
     font-size: 1em;
     font-family: inherit;
     resize: vertical;
+    color: #f1f5f9;
     transition: border-color 0.3s;
 }
 
 .review-form textarea:focus {
     outline: none;
-    border-color: #f093fb;
-    box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+    border-color: #22d3ee;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
 }
 
 .review-form .form-group {
@@ -852,7 +904,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .star-selector > label {
     display: block;
     font-weight: 600;
-    color: #4a1a5c;
+    color: #cbd5e1;
     margin-bottom: 8px;
 }
 
@@ -868,7 +920,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .star-label {
     font-size: 2em;
-    color: #d1d5db;
+    color: #475569;
     cursor: pointer;
     transition: color 0.2s;
 }
@@ -876,7 +928,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .star-picker input:checked ~ .star-label,
 .star-picker .star-label:hover,
 .star-picker .star-label:hover ~ .star-label {
-    color: #ffc107;
+    color: #fbbf24;
+    text-shadow: 0 0 15px rgba(251, 191, 36, 0.7);
 }
 
 .reviews-list {
@@ -884,16 +937,16 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .review-card {
-    background: white;
+    background: rgba(10, 10, 20, 0.5);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 15px;
-    border: 1px solid #f0e6f7;
+    border: 1px solid rgba(168, 85, 247, 0.2);
     transition: box-shadow 0.3s ease;
 }
 
 .review-card:hover {
-    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.1);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3);
 }
 
 .review-header {
@@ -915,24 +968,24 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 1.1em;
-    box-shadow: 0 2px 6px rgba(118, 75, 162, 0.3);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
 }
 
 .reviewer-name {
     font-weight: bold;
-    color: #4a1a5c;
+    color: #f1f5f9;
     font-size: 1em;
 }
 
 .review-date {
-    color: #999;
+    color: #64748b;
     font-size: 0.85em;
 }
 
@@ -942,7 +995,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .review-comment {
-    color: #444;
+    color: #cbd5e1;
     font-size: 0.95em;
     line-height: 1.6;
     margin: 10px 0;
@@ -956,7 +1009,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .review-delete-form button {
     background: none;
     border: none;
-    color: #f5576c;
+    color: #ec4899;
     cursor: pointer;
     font-size: 0.9em;
     font-weight: 600;
@@ -970,7 +1023,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .no-reviews {
     text-align: center;
     padding: 40px 20px;
-    color: #999;
+    color: #64748b;
     font-size: 1.05em;
 }
 
@@ -983,10 +1036,12 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .checkout-form-section, .checkout-summary {
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .checkout-form-section h3,
@@ -994,24 +1049,26 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     margin: 0 0 20px;
     font-size: 1.3em;
     padding-bottom: 12px;
-    border-bottom: 2px solid #fce7f3;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .checkout-form textarea {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #f0e6f7;
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: 10px;
     font-size: 1em;
     font-family: inherit;
     resize: vertical;
+    color: #f1f5f9;
     transition: border-color 0.3s;
 }
 
 .checkout-form textarea:focus {
     outline: none;
-    border-color: #f093fb;
-    box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+    border-color: #22d3ee;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
 }
 
 .payment-options {
@@ -1026,30 +1083,31 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     align-items: center;
     gap: 10px;
     padding: 12px 15px;
-    background: #faf5ff;
-    border: 2px solid transparent;
+    background: rgba(10, 10, 20, 0.5);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
-    color: #4a1a5c;
+    color: #cbd5e1;
 }
 
 .payment-option:hover {
-    background: linear-gradient(135deg, #fef3f2 0%, #faf5ff 100%);
-    border-color: rgba(240, 147, 251, 0.3);
+    background: rgba(168, 85, 247, 0.15);
+    border-color: #22d3ee;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
 }
 
 .payment-option input[type="radio"] {
     width: 18px;
     height: 18px;
-    accent-color: #f093fb;
+    accent-color: #22d3ee;
     cursor: pointer;
 }
 
 .place-order-btn {
     width: 100%;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
     color: white;
     border: none;
     padding: 15px;
@@ -1058,13 +1116,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     border-radius: 30px;
     cursor: pointer;
     margin-top: 15px;
-    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
     transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .place-order-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
 }
 
 .summary-items {
@@ -1079,7 +1137,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     gap: 12px;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #f0e6f7;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .summary-item:last-child {
@@ -1095,22 +1153,23 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .summary-item-name {
     font-weight: 600;
-    color: #4a1a5c;
+    color: #f1f5f9;
     font-size: 0.95em;
 }
 
 .summary-item-qty {
-    color: #666;
+    color: #94a3b8;
     font-size: 0.85em;
 }
 
 .summary-item-price {
     font-weight: bold;
-    color: #4a1a5c;
+    color: #22d3ee;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
 }
 
 .summary-totals {
-    border-top: 2px solid #fce7f3;
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
     padding-top: 15px;
 }
 
@@ -1118,16 +1177,17 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     display: flex;
     justify-content: space-between;
     padding: 6px 0;
-    color: #555;
+    color: #cbd5e1;
 }
 
 .summary-row.total {
     font-size: 1.3em;
     font-weight: bold;
-    color: #4a1a5c;
+    color: #22d3ee;
     padding-top: 12px;
     margin-top: 8px;
-    border-top: 2px solid #fce7f3;
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
 }
 
 /* ========== ORDER CONFIRMATION PAGE ========== */
@@ -1135,11 +1195,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     max-width: 700px;
     margin: 30px auto;
     padding: 50px 40px;
-    background: white;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     text-align: center;
     animation: fadeIn 0.6s ease-out;
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .confirmation-icon {
@@ -1156,7 +1218,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .confirmation-title {
     font-size: 2em;
-    background: linear-gradient(90deg, #667eea, #f093fb);
+    background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1164,24 +1226,25 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .confirmation-subtitle {
-    color: #666;
+    color: #94a3b8;
     font-size: 1.1em;
     margin-bottom: 30px;
 }
 
 .confirmation-details {
-    background: linear-gradient(135deg, #faf5ff 0%, #fef3f2 100%);
+    background: rgba(10, 10, 20, 0.5);
     padding: 25px;
     border-radius: 15px;
     margin: 20px 0;
     text-align: left;
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .detail-row {
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px dashed rgba(118, 75, 162, 0.2);
+    border-bottom: 1px dashed rgba(168, 85, 247, 0.2);
 }
 
 .detail-row:last-child {
@@ -1189,54 +1252,57 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .detail-label {
-    color: #666;
+    color: #94a3b8;
     font-weight: 600;
 }
 
 .detail-value {
-    color: #4a1a5c;
+    color: #f1f5f9;
     font-weight: bold;
 }
 
 .status-badge {
-    background: linear-gradient(135deg, #a8e6c1 0%, #10b981 100%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.85em;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
 }
 
 .total-amount {
-    color: #f5576c;
+    color: #ec4899;
     font-size: 1.3em;
+    text-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
 }
 
 .shipping-details {
-    background: white;
+    background: rgba(10, 10, 20, 0.5);
     padding: 20px;
     border-radius: 15px;
     margin: 20px 0;
     text-align: left;
-    border: 2px solid #f0e6f7;
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .shipping-details h3 {
     margin: 0 0 15px;
     font-size: 1.1em;
-    color: #4a1a5c;
+    color: #f1f5f9;
 }
 
 .shipping-info {
-    color: #555;
+    color: #cbd5e1;
     line-height: 1.7;
 }
 
 .confirmation-message {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: rgba(168, 85, 247, 0.1);
     padding: 20px;
     border-radius: 15px;
     margin: 20px 0;
-    color: #764ba2;
+    color: #c4b5fd;
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .confirmation-message p {
@@ -1255,16 +1321,19 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .order-card {
-    background: white;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(118, 75, 162, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .order-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(240, 147, 251, 0.25);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.4);
+    border-color: rgba(236, 72, 153, 0.5);
 }
 
 .order-card-header {
@@ -1272,11 +1341,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #fce7f3;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .order-id-label {
-    color: #999;
+    color: #64748b;
     font-size: 0.85em;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1286,23 +1355,24 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .order-id-value {
     font-size: 1.3em;
     font-weight: bold;
-    color: #4a1a5c;
+    color: #f1f5f9;
 }
 
 .order-date-value {
-    color: #4a1a5c;
+    color: #cbd5e1;
     font-weight: 600;
 }
 
 .order-total-value {
-    color: #f5576c;
+    color: #ec4899;
     font-size: 1.2em;
     font-weight: bold;
+    text-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
 }
 
 .order-card-body {
     padding: 15px 0;
-    color: #555;
+    color: #cbd5e1;
     line-height: 1.7;
 }
 
@@ -1313,30 +1383,30 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .order-card-actions {
     padding-top: 12px;
-    border-top: 1px solid #f0e6f7;
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
     text-align: right;
 }
 
 .view-order-btn {
-    color: #764ba2;
+    color: #22d3ee;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .view-order-btn:hover {
-    color: #f093fb;
+    color: #ec4899;
     text-decoration: underline;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
 }
+
 /* ========== MOBILE RESPONSIVE ========== */
 @media (max-width: 768px) {
-    /* Header */
     .header {
         padding: 15px 20px;
         font-size: 1.3em;
     }
     
-    /* Nav bar - horizontal scroll if too many items */
     .top-nav {
         padding: 12px 20px;
         overflow-x: auto;
@@ -1348,19 +1418,16 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
         font-size: 0.9em;
     }
     
-    /* User greeting */
     .user-greeting-left {
         padding: 10px 20px;
         font-size: 0.9em;
     }
     
-    /* Container padding */
     .container {
         padding: 0 15px;
         margin: 20px auto;
     }
     
-    /* Product grid — smaller cards on mobile */
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 15px;
@@ -1374,7 +1441,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
         font-size: 1em;
     }
     
-    /* Product detail page */
     .detail-container {
         padding: 20px;
         margin: 15px;
@@ -1392,7 +1458,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
         height: 300px;
     }
     
-    /* Cart items — compact */
     .cart-item {
         grid-template-columns: 80px 1fr;
         gap: 15px;
@@ -1403,7 +1468,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
         height: 80px;
     }
     
-    /* Checkout - stack columns */
     .checkout-layout {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1413,24 +1477,20 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
         padding: 20px;
     }
     
-    /* Reviews section */
     .reviews-section {
         padding: 20px;
         margin: 20px 15px;
     }
     
-    /* Order confirmation */
     .confirmation-container {
         padding: 30px 20px;
         margin: 15px;
     }
     
-    /* Order cards */
     .order-card {
         padding: 20px;
     }
     
-    /* Floating logout - smaller on mobile */
     .floating-logout {
         bottom: 20px;
         right: 20px;
