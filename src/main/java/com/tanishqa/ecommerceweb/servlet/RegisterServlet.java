@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -54,11 +55,18 @@ public class RegisterServlet extends HttpServlet {
         User newUser = new User(username, password, email);
         boolean saved = userDAO.save(newUser);
 
-       if (saved) {
-    // Success — redirect to products page
-    response.sendRedirect("products");
-    return;
-} else {
+        if (saved) {
+            // Fetch the saved user (with ID) from DB
+            User savedUser = userDAO.findByUsername(username);
+            
+            // Auto-login: put user in the session
+            HttpSession session = request.getSession(true);
+            session.setAttribute("loggedInUser", savedUser);
+            
+            // Redirect to products page — user is now logged in
+            response.sendRedirect("products");
+            return;
+        } else {
             request.setAttribute("error", "Registration failed. Please try again.");
             request.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(request, response);
         }
